@@ -11,6 +11,7 @@
 		F6B63CDD27321BFB0006835B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B63CDC27321BFB0006835B /* ContentView.swift */; };
 		F6B63CDF27321BFC0006835B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6B63CDE27321BFC0006835B /* Assets.xcassets */; };
 		F6B63CE227321BFC0006835B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6B63CE127321BFC0006835B /* Preview Assets.xcassets */; };
+		F6B63CEB273223A30006835B /* SlotItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B63CEA273223A30006835B /* SlotItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		F6B63CDE27321BFC0006835B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F6B63CE127321BFC0006835B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F6B63CE327321BFC0006835B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F6B63CEA273223A30006835B /* SlotItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			children = (
 				F6B63CDA27321BFB0006835B /* MidtermApp.swift */,
 				F6B63CDC27321BFB0006835B /* ContentView.swift */,
+				F6B63CEA273223A30006835B /* SlotItem.swift */,
 				F6B63CDE27321BFC0006835B /* Assets.xcassets */,
 				F6B63CE327321BFC0006835B /* Info.plist */,
 				F6B63CE027321BFC0006835B /* Preview Content */,
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6B63CDD27321BFB0006835B /* ContentView.swift in Sources */,
+				F6B63CEB273223A30006835B /* SlotItem.swift in Sources */,
 				F6B63CDB27321BFB0006835B /* MidtermApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

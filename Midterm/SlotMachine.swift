@@ -9,8 +9,8 @@ import Foundation
 
 struct SlotMachine {
     var slotCards = Array<SlotItem>() //the whole possible set deck.
-    var shownSlotItems =  [SlotItem]() //slots currently being shown ex: 7 7 7
-    var balance = 100
+//    var shownSlotItems =  [SlotItem]() //slots currently being shown ex: 7 7 7
+//    var balance = 100
     
     //start the game
     
@@ -28,11 +28,34 @@ struct SlotMachine {
         slotCards.shuffle()
     }
     
-//    func spin() {
-//        <#function body#>
+    mutating func get3SlotItems() -> Array<SlotItem>? {
+        if slotCards.count < 3 {
+            return nil
+        }
+        
+        var myReturnVals = Array<SlotItem>()
+        for _ in 0..<3 {
+            myReturnVals.append(slotCards.remove(at: 0))
+        }
+        
+        return myReturnVals
+    }
+    
+//    mutating func spin() {
+//        if(shownSlotItems.count == 3) {
+//            shownSlotItems.removeAll()
+//        }
+//
+//        for _ in 0..<3 {
+//            if let index = slotCards.indices.randomElement() {
+//                shownSlotItems.append(slotCards.remove(at: index))
+//                //check for any sets here.
+//            } else {
+//                //DISABLE SPIN BUTTON.
+//            }
+//        }
+//
 //    }
     
-//    //
-//    func count()
     
 }

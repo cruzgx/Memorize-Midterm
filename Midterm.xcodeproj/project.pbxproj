@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F6539E272733787E00EDBDAD /* SlotMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6539E262733787E00EDBDAD /* SlotMachine.swift */; };
+		F68F56362734AB9F0012EE91 /* SlotGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68F56352734AB9F0012EE91 /* SlotGame.swift */; };
 		F6B63CDB27321BFB0006835B /* MidtermApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B63CDA27321BFB0006835B /* MidtermApp.swift */; };
 		F6B63CDD27321BFB0006835B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B63CDC27321BFB0006835B /* ContentView.swift */; };
 		F6B63CDF27321BFC0006835B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6B63CDE27321BFC0006835B /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		F6539E262733787E00EDBDAD /* SlotMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotMachine.swift; sourceTree = "<group>"; };
+		F68F56352734AB9F0012EE91 /* SlotGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotGame.swift; sourceTree = "<group>"; };
 		F6B63CD727321BFB0006835B /* Midterm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Midterm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6B63CDA27321BFB0006835B /* MidtermApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MidtermApp.swift; sourceTree = "<group>"; };
 		F6B63CDC27321BFB0006835B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 				F6B63CDC27321BFB0006835B /* ContentView.swift */,
 				F6B63CEA273223A30006835B /* SlotItem.swift */,
 				F6539E262733787E00EDBDAD /* SlotMachine.swift */,
+				F68F56352734AB9F0012EE91 /* SlotGame.swift */,
 				F6B63CDE27321BFC0006835B /* Assets.xcassets */,
 				F6B63CE327321BFC0006835B /* Info.plist */,
 				F6B63CE027321BFC0006835B /* Preview Content */,
@@ -144,6 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F68F56362734AB9F0012EE91 /* SlotGame.swift in Sources */,
 				F6B63CDD27321BFB0006835B /* ContentView.swift in Sources */,
 				F6B63CEB273223A30006835B /* SlotItem.swift in Sources */,
 				F6B63CDB27321BFB0006835B /* MidtermApp.swift in Sources */,

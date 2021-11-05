@@ -7,6 +7,7 @@
 
 //  Think of this represening of the 7s in a 7 7 7 slot matchine
 import Foundation
+import SwiftUI
 
 struct SlotItem: Identifiable, Equatable {
     
@@ -53,7 +54,7 @@ struct SlotItem: Identifiable, Equatable {
         static var all =  [Shades.filled, outlined, shaded]
     }   
     
-    static func  == (lhs: SlotItem, rhs: SlotItem) -> Bool {
+    static func == (lhs: SlotItem, rhs: SlotItem) -> Bool {
         return
             lhs.shape == rhs.shape &&
             lhs.color == rhs.color &&
@@ -61,4 +62,61 @@ struct SlotItem: Identifiable, Equatable {
             lhs.id == rhs.id
     }
     
+    
+    
+    func getCardContents() -> String {
+        if self.shade == Shades.outlined {
+            switch self.shape {
+            case .isometricTriangle:
+                return "△"
+            case .rightTraingle:
+                return "▷"
+            case .downTraingele:
+                return "▽"
+            case .leftTraingle:
+                return "◁"
+            case .square:
+                return "◻"
+            case .circle:
+                return "○"
+            case .diamond:
+                return "◇"
+            }
+        } else {
+            switch self.shape {
+            case .isometricTriangle:
+                return "▲"
+            case .rightTraingle:
+                return "▶"
+            case .downTraingele:
+                return "▼"
+            case .leftTraingle:
+                return "◀"
+            case .square:
+                return "◼"
+            case .circle:
+                return "●"
+            case .diamond:
+                return "◆"
+            }
+        }
+    }
+    
+    func getSlotItemColor() -> Color {
+        switch self.color {
+        case .red:
+            return Color.red
+        case .blue:
+            return Color.blue
+        case .green:
+            return Color.green
+        case .purple:
+            return Color.purple
+        }
+    }
+    
+    func getCardOpacity() -> Double {
+        self.shade == Shades.shaded ? 0.4 : 1.0
+    }
 }
+

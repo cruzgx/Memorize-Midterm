@@ -32,19 +32,29 @@ struct SlotGame {
     }
     
     
-    //check is a winiing spin
+    //check is a wining spin
     mutating public func spin() {
         balance -= 5
         
         if(areAllEqual(arr: shownSlotItems) || notEqAtAll(arr: shownSlotItems)) {
-            balance += 1_000
+            balance += 1000
+        } else if twoSame(arr: shownSlotItems) {
+            balance += 500
+        } else if oneSame(arr: shownSlotItems) || allOneDif(arr: shownSlotItems) {
+            balance += 100
         }
         
         
         //shows 3 new cards
         shownSlotItems.removeAll()
-        shownSlotItems = slotGameCombos.get3SlotItems()!
+        shownSlotItems = slotGameCombos.get3SlotItems()! //FIX ME: Error when nil.
     }
+    
+    
+    
+    
+    
+    
 
     //MARK: Helper functions!
     
@@ -64,6 +74,51 @@ struct SlotGame {
         let C = arr[2]
         
         return A.notEqualAtAll(B) && B.notEqualAtAll(C) && A.notEqualAtAll(C)
+    }
+    
+    //returns true if all items have 2 same features
+    private func twoSame(arr: Array<SlotItem>) -> Bool {
+        let A = arr[0]
+        let B = arr[1]
+        let C = arr[2]
+        
+        
+        //check A & B & C have the 2 same feat.
+        let areAandB2same =  (A.shape == B.shape && (A.shape == C.shape) && A.color == B.color && (A.color == C.color) )
+                          || (A.shape == B.shape && (A.shape == C.shape) && A.shade == B.shade && (A.shade == C.shade) )
+        
+        return areAandB2same
+    }
+    
+    //add function that returns true if 2 features are never identical.
+    //--- HERE -->
+    
+    
+    //returns true if one item is similar across all cards...
+    private func oneSame(arr: Array<SlotItem>) -> Bool {
+        let A = arr[0]
+        let B = arr[1]
+        let C = arr[2]
+        
+        //check if shape is the same
+        let isShapeSame = A.shape == B.shape && B.shape == C.shape && A.shape == C.shape
+        let isColorSame = A.color == B.color && B.color == C.color && A.color == C.color
+        let isShadeSame = A.shade == B.shade && B.shade == C.shade && A.shade == C.shade
+        
+        return isShapeSame || isColorSame || isShadeSame
+    }
+    
+    //returns true if if only one attribute is ALL different.
+    private func allOneDif(arr: Array<SlotItem>) -> Bool {
+        let A = arr[0]
+        let B = arr[1]
+        let C = arr[2]
+        
+        let isAllShapeDif  = A.shape != B.shape && B.shape != C.shape && A.shape != C.shape
+        let isAllColorDif  = A.color != B.color && B.color != C.color && A.color != C.color
+        let isAllShadeDiff = A.shade != B.shade && B.shade != C.shade && A.shade != C.shade
+        
+        return isAllShapeDif || isAllColorDif || isAllShadeDiff
     }
 }
 

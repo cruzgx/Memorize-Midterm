@@ -19,18 +19,31 @@ struct ContentView: View {
                  .lTitle()
                 
                 
-                LazyVGrid(columns:[GridItem(.adaptive(minimum: 75))]) {
+//                LazyVGrid(columns:[GridItem(.adaptive(minimum: 75))]) {
+//                    ForEach(viewModel.slotItems) { item in
+//                        SlotView(item)
+//                        .aspectRatio(2/3, contentMode: .fit)
+//                            //BUG EXISTS BELOW
+//                            .opacity(item.getCardOpacity())
+//                            .foregroundColor(item.getSlotItemColor())
+//                            //.background(item.getSlotItemColor())
+//
+//                    }
+//                }
+//                .padding(.horizontal)
+                
+                HStack {
                     ForEach(viewModel.slotItems) { item in
                         SlotView(item)
-                        .aspectRatio(2/3, contentMode: .fit)
-                            //BUG EXISTS BELOW
+                            .aspectRatio(2/3, contentMode: .fit)
+                            //BUG EXISTS BELOW - with opacity
                             .opacity(item.getCardOpacity())
                             .foregroundColor(item.getSlotItemColor())
                             //.background(item.getSlotItemColor())
-                            
+                        
                     }
                 }
-                .padding(.horizontal)
+                .padding()
             
                 
                 HStack {

@@ -62,22 +62,6 @@ struct SlotItem: Identifiable, Equatable {
             lhs.id == rhs.id
     }
     
-    public func isEqualTo(_ other: SlotItem) -> Bool {
-        return
-            self.shape == other.shape &&
-            self.color == other.color &&
-            self.shade == other.shade
-    }
-    
-    //returns true if the follwoing aren't in any regard.
-    public func notEqualAtAll(_ other: SlotItem) -> Bool {
-        return
-            self.shape != other.shape &&
-            self.color != other.color &&
-            self.shade != other.shade
-    }
-    
-    
     func getCardContents() -> String {
         if self.shade == Shades.outlined {
             switch self.shape {
@@ -132,5 +116,22 @@ struct SlotItem: Identifiable, Equatable {
     func getCardOpacity() -> Double {
         self.shade == Shades.shaded ? 0.4 : 1.0
     }
+    
+    public func isEqualTo(_ other: SlotItem) -> Bool {
+        return
+            self.shape == other.shape &&
+            self.color == other.color &&
+            self.shade == other.shade
+    }
+    
+    //returns true if the follwoing aren't in any regard.
+    public func notEqualAtAll(_ other: SlotItem) -> Bool {
+        return
+            self.shape != other.shape &&
+            self.color != other.color &&
+            self.shade != other.shade
+    }
+    
+    
 }
 

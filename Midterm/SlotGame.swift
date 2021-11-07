@@ -14,6 +14,8 @@ struct SlotGame {
     var shownSlotItems =  Array<SlotItem>()  //Ones shown to user.
     var balance = 100
     
+    var incurredCost: Int?
+    
     init() {
 
         if let values = slotGameCombos.get3SlotItems() {
@@ -31,7 +33,10 @@ struct SlotGame {
     
     
     //check is a winiing spin
-    
-    
+    mutating public func spin() {
+        balance -= 5
+    }
+
+
 }
 

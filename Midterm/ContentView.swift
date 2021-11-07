@@ -16,28 +16,40 @@ struct ContentView: View {
         VStack {
             ScrollView {
                 Text("Balance: $ " + String(viewModel.getGameBalance()))
-                    .font(.largeTitle)
+                 .lTitle()
                 
                 
                 LazyVGrid(columns:[GridItem(.adaptive(minimum: 75))]) {
                     ForEach(viewModel.slotItems) { item in
                         SlotView(item)
-                            .aspectRatio(2/3, contentMode: .fit)
-                            //.foregroundColor(card.getCardOutline())
+                        .aspectRatio(2/3, contentMode: .fit)
+                            //BUG EXISTS BELOW
+                            .opacity(item.getCardOpacity())
+                            .foregroundColor(item.getSlotItemColor())
+                            //.background(item.getSlotItemColor())
+                            
                     }
                 }
                 .padding(.horizontal)
-                
-
-                
+            
                 
                 HStack {
-                    Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                        Text("Left Button")
+                    Button(action: {viewModel.newGame()}, label: {
+                        VStack {
+                            Image(systemName: "play.circle.fill")
+                                .lTitle()
+                            Text("New Game")
+                                .font(.caption)
+                        }
                     })
                     Spacer()
-                    Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                        Text("Right Button")
+                    Button(action: {viewModel.handleSpin()}, label: {
+                        VStack {
+                            Image(systemName: "arrow.triangle.2.circlepath.circle.fill")
+                                .lTitle()
+                            Text("Spin")
+                                .font(.caption)
+                        }
                     })
                     
                 }
@@ -63,11 +75,27 @@ struct SlotView : View {
             shape.strokeBorder(lineWidth: 3.0)
             
             Text(slot.getCardContents())
-                .foregroundColor(.purple)
-                .opacity(slot.getCardOpacity())
+                
+//                .foregroundColor(slot.getSlotItemColor())
+//                .opacity(slot.getCardOpacity())
         }
     }
     
+}
+
+
+
+struct LTitle: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.largeTitle)
+    }
+}
+
+extension View {
+    func lTitle() -> some View {
+        self.modifier(LTitle())
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {

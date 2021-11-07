@@ -27,5 +27,13 @@ class Game: ObservableObject {
         model.balance
     }
     
-    //Spin 
+}
+
+
+
+extension Game {
+
+    public func handleSpin(){
+        model.spin()
+    }
 }

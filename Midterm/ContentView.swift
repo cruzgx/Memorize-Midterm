@@ -56,7 +56,11 @@ struct ContentView: View {
                         }
                     })
                     Spacer()
-                    Button(action: {viewModel.handleSpin()}, label: {
+                    Button(action: {
+                        withAnimation {
+                            viewModel.handleSpin()
+                        }
+                    }, label: {
                         VStack {
                             Image(systemName: "arrow.triangle.2.circlepath.circle.fill")
                                 .lTitle()
